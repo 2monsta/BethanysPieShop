@@ -1,0 +1,17 @@
+﻿@model BethanysPieShop.ViewModels.PiesListViewModel
+@{
+    ViewData["Title"] = "List";
+}
+
+<h1>Behtany's Pie Shop</h1>
+
+<h1>@Model.CurrentCategory</h1>
+
+@foreach ( var item in Model.Pies)
+{
+    <div>
+        <h2>@item.Name</h2>
+        <h3>@item.Price.ToString("c")</h3>
+        <h4>@item.Category.CategoryName</h4>
+    </div>
+}

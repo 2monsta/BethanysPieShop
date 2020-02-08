@@ -10,10 +10,10 @@ namespace BethanysPieShop.Models
         private readonly ICategoryRepository _categoryRepository = new MockCategoryRepository();
         public IEnumerable<Pie> AllPies => new List<Pie>
         {
-            new Pie {PieId = 1, Name="Strawberry", Price = 8.12M, ShortDescription = "SPie" },
-            new Pie {PieId =2, Name="Cheese", Price = 8.12M, ShortDescription = "SPie" },
-            new Pie {PieId = 3, Name="Berry", Price = 8.12M, ShortDescription = "SPie" },
-            new Pie {PieId = 4, Name="Pumpkin", Price = 8.12M, ShortDescription = "SPie" }
+            new Pie {PieId = 1, Name="Strawberry", Price = 8.12M, ShortDescription = "SPie", Category = _categoryRepository.AllCategories.ToList()[0]},
+            new Pie {PieId =2, Name="Cheese", Price = 8.12M, ShortDescription = "SPie", Category = _categoryRepository.AllCategories.ToList()[1]},
+            new Pie {PieId = 3, Name="Berry", Price = 8.12M, ShortDescription = "SPie", Category = _categoryRepository.AllCategories.ToList()[2] },
+            new Pie {PieId = 4, Name="Pumpkin", Price = 8.12M, ShortDescription = "SPie", Category = _categoryRepository.AllCategories.ToList()[0] }
         };
 
         public IEnumerable<Pie> PiesOfTheWeek => throw new NotImplementedException();
